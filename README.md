@@ -1,4 +1,4 @@
-# 🚀 Portfolio Website
+## 🚀 Portfolio Website
 
 A personal portfolio built with **Next.js** and **Tailwind CSS**.  
 Showcases projects, Discord presence, Spotify activity, a playable Snake mini-game, and a fun terminal.
