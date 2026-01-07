@@ -120,37 +120,15 @@ export default function Terminal({
     switch (mainCmd) {
       case "help":
         output = `Available commands:
-- ping: Test connectivity
 - clear: Clear console
-- color [hex/name]: Change terminal color
-- close: Close the terminal
-- minimize: Minimize the terminal
 - echo [text]: Echo text back
 - snake: Play snake game`;
-        break;
-      case "ping":
-        output = "Pong! Connection is active.";
         break;
       case "clear":
         setHistory([WELCOME_MSG]);
         return;
-      case "color":
-        if (args[1]) {
-          const newColor = args[1].startsWith("#") ? args[1] : `#${args[1]}`;
-          setTerminalColor(newColor);
-          output = `Terminal color changed to ${newColor}`;
-        } else {
-          output = "Usage: color [hex/name]";
-        }
-        break;
-      case "close":
-        onClose();
-        return;
-      case "minimize":
-        setPropMinimized(true);
-        return;
       case "echo":
-        output = args.slice(1).join(" ") || "Usage: echo [text]";
+        output = args.slice(1).join(" ");
         break;
       case "snake":
         setShowSnake(true);
@@ -160,7 +138,7 @@ export default function Terminal({
       case "":
         break;
       default:
-        output = `Command not found: ${mainCmd}. Type "help" for available commands.`;
+        output = `Command not found: ${mainCmd}. Type "help" for available commands...`;
     }
     setHistory((prev) => [...prev, `$ ${cmd}`, output]);
   };
