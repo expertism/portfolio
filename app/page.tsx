@@ -46,10 +46,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
       <Background />
-
       <div className="w-full max-w-md">
         <div className="border border-zinc-800/50 rounded-lg overflow-hidden relative">
-          <div className="h-32 bg-linear-to-r from-gray-600 to-black-600" />
+          <div className="h-32 bg-gray-600" />
           <TerminalBtn />
 
           <div className="p-8 bg-black flex flex-col gap-8">
