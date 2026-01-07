@@ -51,7 +51,7 @@ export default function Home() {
           <div className="h-32 bg-gray-600" />
           <TerminalBtn />
 
-          <div className="p-8 bg-black flex flex-col gap-8">
+          <div className="p-8 bg-black flex flex-col gap-8 -mt-8">
             {/* profile section */}
             <div className="flex items-start -mt-20">
               <div className="flex flex-col">
