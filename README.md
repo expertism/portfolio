@@ -51,13 +51,6 @@ npm start
 
 ---
 
-## 📝 Notes
-
-- This is a playful, quick side project — expect experiments!
-- Add any required API keys as environment variables.
-
----
-
 ## 📄 License & Contact
 
 - MIT License — see [LICENSE.md](LICENSE.md)

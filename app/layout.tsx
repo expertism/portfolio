@@ -28,7 +28,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <script
+        {/* <script
           dangerouslySetInnerHTML={{
             __html: `
               document.addEventListener('contextmenu', e => e.preventDefault());
@@ -43,7 +43,7 @@ export default function RootLayout({
               });
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );
