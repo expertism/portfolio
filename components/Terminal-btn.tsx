@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Terminal from "./Terminal";
+import { Terminal as TerminalIcon } from "lucide-react";
 
 export default function TerminalBtn() {
   const [showTerminal, setShowTerminal] = useState(false);
@@ -26,7 +27,7 @@ export default function TerminalBtn() {
         title="Toggle Terminal"
         onClick={handleButtonClick}
       >
-        [?]
+        <TerminalIcon className="w-5 h-5" />
       </button>
       {showTerminal && (
         <Terminal
