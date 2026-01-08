@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Terminal as TerminalIcon, Minus, X } from "lucide-react";
 import SnakeGame from "./SnakeGame";
+import TetrisGame from "./TetrisGame";
 
 interface TerminalProps {
   onClose: () => void;
@@ -18,6 +19,7 @@ export default function Terminal({
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([WELCOME_MSG]);
   const [showSnake, setShowSnake] = useState(false);
+  const [showTetris, setShowTetris] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const historyRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -122,7 +124,8 @@ export default function Terminal({
         output = `Available commands:
 - clear: Clear console
 - echo [text]: Echo text back
-- snake: Play snake game`;
+- snake: Play snake game
+- more commands coming soon...`;
         break;
       case "clear":
         setHistory([WELCOME_MSG]);
@@ -133,6 +136,11 @@ export default function Terminal({
       case "snake":
         setShowSnake(true);
         output = "Launching Snake Game...";
+        inputRef.current?.blur();
+        break;
+      case "tetris":
+        setShowTetris(true);
+        output = "Launching Tetris Game...";
         inputRef.current?.blur();
         break;
       case "":
@@ -222,7 +230,7 @@ export default function Terminal({
           )}
         </div>
 
-        {!showSnake && (
+        {!showSnake && !showTetris && (
           <form onSubmit={handleSubmit} className="pt-1 pb-2 pl-4 bg-[#0a0a0a]">
             <div className="flex items-center gap-2 font-mono text-xs">
               <span style={{ color: "#10b981" }}>$</span>
@@ -240,6 +248,9 @@ export default function Terminal({
         )}
       </div>
       {showSnake && <SnakeGame onClose={() => setShowSnake(false)} retryable />}
+      {showTetris && (
+        <TetrisGame onClose={() => setShowTetris(false)} retryable />
+      )}
     </div>
   );
 }

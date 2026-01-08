@@ -48,9 +48,14 @@ export default function Home() {
       <Background />
       <div className="w-full max-w-md">
         <div className="border border-zinc-800/50 rounded-lg overflow-hidden relative">
-          <div className="h-32 bg-gray-600" />
+          <Image
+            src={"/banner.png"}
+            alt="banner"
+            width={500}
+            height={200}
+            className="h-32 object-cover"
+          />
           <TerminalBtn />
-
           <div className="p-8 bg-black flex flex-col gap-8 -mt-8">
             {/* profile section */}
             <div className="flex items-start -mt-20">
