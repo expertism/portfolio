@@ -177,14 +177,16 @@ export default function TetrisGame({ onClose, retryable }: TetrisGameProps) {
   }
 
   function handleKey(e: KeyboardEvent) {
-    if (!started || gameOver || paused) return;
+    if (e.key === " ") {
+      e.preventDefault();
+      if (started && !gameOver) setPaused((p) => !p);
+      return;
+    }
+    if (gameOver || paused || !started) return;
     if (e.key === "ArrowLeft") move(-1, 0);
     else if (e.key === "ArrowRight") move(1, 0);
     else if (e.key === "ArrowDown") move(0, 1);
-    else if (e.key === " ") {
-      e.preventDefault();
-      setPaused((p) => !p);
-    } else if (e.key === "ArrowUp") {
+    else if (e.key === "ArrowUp") {
       // Rotate
       const { shape, color, idx, pos } = current;
       const rotated = rotate(shape);
