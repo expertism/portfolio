@@ -125,6 +125,7 @@ export default function Terminal({
 - clear: Clear console
 - echo [text]: Echo text back
 - snake: Play snake game
+- tetris: Play tetris game (broken)
 - more commands coming soon...`;
         break;
       case "clear":
