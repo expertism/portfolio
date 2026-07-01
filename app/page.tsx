@@ -28,7 +28,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function Home() {
-  const DISCORD_USER_ID = "853758524114993183";
+  const DISCORD_USER_ID = "1098730877686657166";
   const { discord, spotify, discordStatus } = useLanyard(DISCORD_USER_ID);
 
   const [now, setNow] = useState(Date.now());
@@ -120,7 +120,7 @@ export default function Home() {
                     <div className="mt-3 flex items-center gap-2">
                       <span className="text-xs text-gray-400 w-10">
                         {`${Math.floor(getElapsed() / 60000)}:${String(
-                          Math.floor((getElapsed() % 60000) / 1000)
+                          Math.floor((getElapsed() % 60000) / 1000),
                         ).padStart(2, "0")}`}
                       </span>
 
@@ -130,7 +130,7 @@ export default function Home() {
                           style={{
                             width: `${Math.min(
                               100,
-                              (getElapsed() / getDuration()) * 100
+                              (getElapsed() / getDuration()) * 100,
                             )}%`,
                           }}
                         />
@@ -140,8 +140,8 @@ export default function Home() {
                         -{Math.floor((getDuration() - getElapsed()) / 60000)}:
                         {String(
                           Math.floor(
-                            ((getDuration() - getElapsed()) % 60000) / 1000
-                          )
+                            ((getDuration() - getElapsed()) % 60000) / 1000,
+                          ),
                         ).padStart(2, "0")}
                       </span>
                     </div>
