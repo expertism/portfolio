@@ -1,6 +1,6 @@
 ## TODO List
 
-- [ ] Remake the whole site without ~~vibe~~ coding anything.
+- [ ] Remake the whole site without ~~vibe~~ coding anything yh
 - [ ] Actually implement all the todos 😭
 - [x] ~~Better backgorund.~~
 - [ ] Make the main page better.
