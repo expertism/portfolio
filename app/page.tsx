@@ -28,7 +28,7 @@ function StatusBadge({ status }: { status: string }) {
 }
 
 export default function Home() {
-  const DISCORD_USER_ID = "1098730877686657166";
+  const DISCORD_USER_ID = "686950678391685198";
   const { discord, spotify, discordStatus } = useLanyard(DISCORD_USER_ID);
 
   const [now, setNow] = useState(Date.now());
